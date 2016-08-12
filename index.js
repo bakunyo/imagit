@@ -9,3 +9,9 @@ app.on("ready", e => {
 app.on("window-all-closed", e => {
   app.quit();
 });
+
+const ipcMain = require('electron').ipcMain;
+
+ipcMain.on('click-button', (sender, v) => {
+  console.log(v);
+});
