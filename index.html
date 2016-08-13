@@ -2,18 +2,40 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Electron App</title>
+    <title>Imagit</title>
+    <style>
+      #container {
+        display: flex;
+        height: 1000px;
+      }
+      #header, #main {
+        padding: 20px;
+      }
+      #header {
+        width: 30%;
+        height: 100%;
+        border-right: 1px solid #ccc;
+      }
+    </style>
+    <script>
+      require('./js/git');
+    </script>
 </head>
 <body>
-   <h1>Hello Electron</h1>
-   <button id="incrementButton">increment</button>
-   <script>
-      const ipcRenderer = require('electron').ipcRenderer;
-      const button = document.getElementById('incrementButton');
-      var count = 0;
-      button.addEventListener('click', e => {
-        ipcRenderer.send('click-button', ++count);
-      });
-   </script>
+   <div id="container">
+     <input id="commit_origin" type="radio" name="commit" class="commit" style="display: none" />
+     <div id="header">
+        <h1>画像比較くん</h1>
+        <h3>リポジトリを選択</h3>
+        <input type="file" id="repo" webkitdirectory directory />
+        <h3>コミット履歴</h3>
+        <div id="commits"></div>
+     </div>
+     <div id="main" style="display: none">
+     <h3>Before</h3>
+     <h3>After</h3>
+     <h3>Diff</h3>
+     </div>
+   </div>
 </body>
 </html>
