@@ -1,3 +1,15 @@
 #main {
-  background: lightgreen;
+  display: flex;
+  margin-top: 10px;
+  min-height: 100vh;
+  border: 1px solid #ccc;
+}
+
+#commit_list {
+  width: 300px;
+  border-right: 1px solid #ccc;
+}
+
+#image_viewer {
+  flex: 1;
 }
