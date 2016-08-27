@@ -10,9 +10,18 @@ export default class CommitList extends Component {
           <Subheader>
             <h2>Commit List</h2>
           </Subheader>
-          <ListItem primaryText='commit name' ></ListItem>
-          <ListItem primaryText='commit name' ></ListItem>
-          <ListItem primaryText='commit name' ></ListItem>
+          <ListItem
+            primaryText='commit message'
+            secondaryText='committer name & commit date'
+          />
+          <ListItem
+            primaryText='commit message'
+            secondaryText='committer name & commit date'
+          />
+          <ListItem
+            primaryText='commit message'
+            secondaryText='committer name & commit date'
+          />
         </List>
       </div>
     )
