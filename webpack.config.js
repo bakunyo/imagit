@@ -20,6 +20,7 @@ module.exports = {
       }
     ]
   },
+  target: 'electron',
   resolve: {
     extensions: ['', '.js', '.scss']
   }
