@@ -1,38 +1,18 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/root'
-import './sass/style'
-import Reducer from './reducer'
-import { increment } from './actions'
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux';
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
 // Needed for onTouchTap http://stackoverflow.com/a/34015469/988941
+import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-import { createStore } from 'redux'
-import { connect, Provider } from 'react-redux';
+import Root from './containers/App'
+import store from './store'
+import './sass/style'
 
-
-function mapStateToProps(state) {
-  return state
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    handleClick: () => { dispatch(increment()) }
-  }
-}
-
-const Root = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
-
-const store = createStore(Reducer)
-
-ReactDOM.render(
+render(
   <Provider store={store}>
     <Root />
   </Provider>,
-  document.getElementById('root')
+  document.querySelector('#root')
 )
