@@ -1,5 +1,8 @@
-export const INCREMENT = 'INCREMENT'
+export const SET_REPO = 'SET_REPO'
 
-export function increment() {
-  return { type: INCREMENT }
+export function setRepo(path) {
+  return {
+    type: SET_REPO,
+    path: path
+  }
 }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { increment } from '../actions'
+import { setRepo } from '../actions'
 import Root from '../components/root'
 
 function mapStateToProps(state) {
@@ -8,7 +8,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleClick: () => { dispatch(increment()) }
+    selectRepo: (path) => {
+      dispatch(setRepo(path))
+    }
   }
 }
 

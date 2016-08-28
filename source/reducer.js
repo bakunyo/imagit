@@ -1,13 +1,21 @@
-import { increment, INCREMENT } from './actions'
+import { setRepo, SET_REPO } from './actions'
+import Git from './git'
 
 const initialState = {
-  value: 0
+  git: {
+    path: '',
+    repo: null
+  }
 }
 
 export default (state = initialState, action) => {
   switch(action.type) {
-    case INCREMENT:
-      return { value: state.value + 1 }
+    case SET_REPO:
+      const git = new Git(action.path)
+      git.log()
+      return Object.assign({}, state,
+        { git: { path: action.path } }
+      )
     default:
       return state
   }
