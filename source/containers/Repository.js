@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import App from '../components/root'
 import { increment } from '../actions'
+import Root from '../components/root'
 
 function mapStateToProps(state) {
   return state
@@ -15,4 +15,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(Root)

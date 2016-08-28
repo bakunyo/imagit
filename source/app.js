@@ -6,13 +6,13 @@ import { Provider } from 'react-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-import Root from './containers/App'
+import App from './components/app'
 import store from './store'
 import './sass/style'
 
 render(
   <Provider store={store}>
-    <Root />
+    <App />
   </Provider>,
   document.querySelector('#root')
 )

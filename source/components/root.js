@@ -1,15 +1,12 @@
 import React from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './header'
 import Main from './main'
 
-const App = ({ value, handleClick }) => (
-  <MuiThemeProvider>
-    <section id='root'>
-      <Header value={value} handle={handleClick} />
-      <Main />
-    </section>
-  </MuiThemeProvider>
+const Root = ({ value, handleClick }) => (
+  <section id='root'>
+    <Header value={value} handle={handleClick} />
+    <Main />
+  </section>
 )
 
-export default App
+export default Root
