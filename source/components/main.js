@@ -1,6 +1,6 @@
 import React from 'react'
-import CommitList from './commit_list'
-import ImageViewer from './image_viewer'
+import CommitList from './CommitList'
+import ImageViewer from './ImageViewer'
 
 const Main = () => (
   <section id='main'>
