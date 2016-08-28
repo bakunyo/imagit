@@ -8,7 +8,7 @@ const Root = ({ selectRepo, git }) => (
       selectRepo={selectRepo}
       git={git} 
     />
-    <Main />
+    <Main git={git} />
   </section>
 )
 

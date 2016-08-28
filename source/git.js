@@ -6,11 +6,10 @@ export default class Git {
     this.repo = SimpleGit(path)
   }
 
-  log() {
-    this.repo.log((err, logs) => {
-      logs.all.forEach((log) => {
-        console.log(log.message)
-      })
+  commits() {
+    return this.repo.log().then((err, logs) => {
+      if (err !== null) { return [] }
+      return logs.all.slice(0, 10)
     })
   }
 }

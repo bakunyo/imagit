@@ -2,9 +2,9 @@ import React from 'react'
 import CommitList from './CommitList'
 import ImageViewer from './ImageViewer'
 
-const Main = () => (
+const Main = ({ git }) => (
   <section id='main'>
-    <CommitList />
+    <CommitList git={git} />
     <ImageViewer />
   </section>
 )
