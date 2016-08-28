@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './header'
 import Main from './main'
 
-export default class Root extends Component {
-  render() {
-    return (
-      <section id='root'>
-        <Header />
-        <Main />
-      </section>
-    )
-  }
-}
+const App = ({ value, handleClick }) => (
+  <MuiThemeProvider>
+    <section id='root'>
+      <Header value={value} handle={handleClick} />
+      <Main />
+    </section>
+  </MuiThemeProvider>
+)
+
+export default App
