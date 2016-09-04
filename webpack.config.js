@@ -5,6 +5,13 @@ module.exports = {
     filename: "app.js"
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      }
+    ],
     loaders: [
       {
         test: /\.js$/,
@@ -21,6 +28,9 @@ module.exports = {
     ]
   },
   target: 'electron',
+  eslint: {
+    configFile: './.eslintrc.json'
+  },
   resolve: {
     extensions: ['', '.js', '.scss']
   }
